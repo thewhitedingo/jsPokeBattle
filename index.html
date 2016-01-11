@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="icon" type="image/png" href="img/logo_pokeball.png" />
+		<meta charset="utf-8">
+		<title>Pokemon Battle Demo</title>
+		
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link href="css/stylesheet.css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+		<div id="main" class="bullseye box-shadow-1 border-radius">
+			<div id="top-screen">
+				<div id="player" class="">
+					<div id="pname" class="absolute"></div>
+					<div id="plevel" class="absolute"></div>
+					<img id="pinfo" class="absolute" src="img/your_info.png">
+					<img id="psprite" class="absolute" src="img/charmander.png">
+					<div id="player-health" class="absolute">
+						<div id="phealth" class="absolute"></div>
+					</div>
+				</div>
+
+				<img id='attack' src='img/attack.png' class="absolute hide">
+
+				<div id="enemy" class="">
+					<div id="ename" class="absolute"></div>
+					<div id="elevel" class="absolute"></div>
+					<img id="einfo" class="absolute" src="img/enemy_info.png">
+					<img id="esprite" class="absolute" src="img/pikachu.png">
+					<div id="enemy-health" class="absolute">
+						<div id="ehealth" class="absolute"></div>
+					</div>
+				</div>
+				<div id="chat-text" class="absolute text-subhead pointer">
+					
+				</div>
+				<img id="grass" class="img-spacing" src="img/grass.png"  class="img-spacing">
+				<img id="window" class="img-spacing" src="img/chat_window.png">
+			</div>
+			<div id="bottom-screen">
+				<div id="user-buttons">
+					<div id="move-1" value="0">
+						<div id="mb1-text" class="text-13 text-center pointer" ></div>
+						<img class="move-button mb1 pointer" src="img/move.png">
+					</div>
+					<div id="move-2" value="1">
+						<div id="mb2-text" class="text-13 text-center pointer" ></div>
+						<img class="move-button mb2 pointer" src="img/move.png">
+					</div>
+					<div id="move-3" value="2">
+						<div id="mb3-text" class="text-13 text-center pointer" ></div>
+						<img class="move-button mb3 pointer" src="img/move.png">
+					</div>					
+					<div id="move-4" value="3">
+						<div id="mb4-text" class="text-13 text-center pointer" ></div>
+						<img class="move-button mb4 pointer" src="img/move.png">
+					</div>
+					
+					
+				</div>
+				<img id="toolbar" class="img-spacing" src="img/toolbar_bg.png">
+				<div id="gameover" class="absolute text-30 text-center hide">
+					GAME OVER
+				</div>
+			</div>
+
+		<script type ="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
+</html>

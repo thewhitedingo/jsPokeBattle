@@ -1,0 +1,252 @@
+	html, body {
+        padding: 0;
+        margin: 0;
+        background-color: #f5f5f5;
+        width: 100%;
+        height: 100%;
+		font-family: Roboto;
+		-webkit-user-select: none;      
+		-moz-user-select: none;
+		-ms-user-select: none;
+    }
+    #main {
+        width: 241px;
+        border: 5px solid black;
+    }
+    #top-screen {
+        width: 241px;
+        overflow: hidden;
+    }
+
+    #bottom-screen {
+        overflow: hidden;
+    }
+
+    .img-spacing {
+        float: left;
+    }
+
+    #grass {
+        width: 100%;
+    }
+
+    #window {
+        width: 100%;
+    }
+
+    #toolbar {
+        width: 100%;
+    }
+
+    #psprite {
+        height: 65px;
+        top: 77px;
+        left: 25px;
+    }
+
+    #pinfo {
+        height: 29px;
+        top: 111px;
+        right: 8px;
+    }
+
+    #pname {
+        z-index: 1;
+        top: 114px;
+        left: 146px;
+        font-size: 10px;
+    }
+
+    #plevel {
+        z-index: 1;
+        top: 118px;
+        left: 214px;
+        font-size: 7px;
+    }
+
+    #player-health {
+        z-index: 1;
+        width: 45px;
+        top: 130px;
+        right: 35px;
+    }
+
+    #phealth {
+        z-index: 1;
+        width: 45px;
+        height: 2px;
+        background-color: #00B200;
+    }
+
+    #esprite {
+        height: 70px;
+        top: 28px;
+        right: 30px;
+        z-index: 1;
+    }
+
+    #einfo {
+        height: 29px;
+        top: 7px;
+        left: 7px;
+    }
+
+    #ename {
+        z-index: 1;
+        top: 10px;
+        left: 10px;
+        font-size: 10px;
+    }
+
+    #elevel {
+        z-index: 1;
+        top: 14px;
+        left: 75px;
+        font-size: 7px;
+    }
+
+    #enemy-health {
+        z-index: 1;
+        width: 45px;
+        top: 26px;
+        left: 47px;
+    }
+
+    #ehealth {
+        z-index: 1;
+        width: 45px;
+        height: 2px;
+        background-color: #00B200;
+    }
+
+    #chat-text {
+        top: 152px;
+        left: 20px;
+    }
+
+    .move-button {
+        position: absolute;
+        height: 50px;
+        width: 110px;
+    }
+
+    .mb1 {
+        bottom: 110px;
+        left: 10px;
+    }
+
+    #mb1-text {
+        position: absolute;
+        z-index: 1;
+        bottom: 124px;
+        left: 25px;
+    }
+
+    .mb2 {
+        bottom: 40px;
+        left: 10px;
+    }
+
+    #mb2-text {
+        bottom: 54px;
+        left: 25px;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .mb3 {
+        bottom: 110px;
+        right: 10px;
+    }
+
+    #mb3-text {
+        bottom: 124px;
+        left: 138px;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .mb4 {
+        bottom: 40px;
+        right: 10px;
+    }
+
+    #mb4-text {
+        bottom: 54px;
+        left: 138px;
+        position: absolute;
+        z-index: 1;
+    }
+
+    #gameover {
+        bottom: 80px;
+        left: 37px;
+    }
+
+    .playerAttack {
+        width: 75px;
+        top: 65px;
+        left: 140px;
+        z-index: 2;
+    }
+
+    .enemyAttack {
+        width: 75px;
+        top: 110px;
+        left: 25px;
+        z-index: 2;
+    }
+
+	/*---- Theme Classes ----*/
+	
+    .absolute {
+        position: absolute;
+    }
+
+	.bullseye {
+		-webkit-filter: blur(0);
+        position: relative !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate3d(-50%, -50%, 0) !important;
+    }
+	
+	.box-shadow-1 {
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37) !important;
+    }
+
+    .border-radius {
+        -webkit-border-radius: 2px !important;
+        -moz-border-radius: 2px !important;
+        border-radius: 2px !important;
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    .hide {
+        display: none !important;
+    }
+	
+	.text-center {
+        text-align: center !important;
+    }
+	
+	.text-30 {
+        font-size: 30px !important;
+        line-height: 40px !important;
+        letter-spacing: normal !important;
+    }
+
+    .text-13 {
+        font-size: 13px !important;
+        line-height: 24px !important;
+        letter-spacing: 0.005em !important;
+    }
+
+    .text-subhead {
+        font-size: 14px !important;
+        line-height: 24px !important;
+        letter-spacing: 0.01em !important;
+    }
