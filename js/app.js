@@ -100,7 +100,7 @@ move.prototype.attack = function(defender, attacker) { // the attack method for 
 			defender.health = newHealth
 			defender.updateHealth(100);
 		}
-	} else {
+	} else { //applies move effect to either the attacking or defending pokemon
 		if (this.target === "attacker") {
 			var newEffect = power;
 			attacker.effect = newEffect;
@@ -119,10 +119,10 @@ move.prototype.attack = function(defender, attacker) { // the attack method for 
 var ember = new move("Ember", "fire", "attack", 25, 60, "defender"); //create all move objects
 var scratch = new move("Scratch", "normal", "attack", 15, 80, "defender");
 var leer = new move("Leer", "normal", "defense", 10, 100, "attacker");
-var burn = new move("Burn", "normal", "defense", "burn", 60, "defender");
+var fireblast = new move("Fireblast", "normal", "attack", 30, 50, "defender");
 var thundershock = new move("Thundershock", "electric", "attack", 25, 60, "defender");
 var thunderbolt = new move("Thunderbolt", "electric", "attack",15,  80, "defender");
-var thunderwave = new move("Thunderwave", "electric", "defense", "paralyze", 60, "defender");
+var thunder = new move("Thunder", "electric", "attack", 30, 50, "defender");
 var tailwhip = new move("Tailwhip", "normal", "defense", 10, 100, "attacker");
 
 var pikachu = new pokemon("Pikachu", "electric", "lv 13", 100, 1, "enemy"); // create all pokemon objects
@@ -147,7 +147,7 @@ var playerTurn = function() { //turn object to activate players turn
 var playerMoves = [ember, scratch, leer, burn];
 var moveSelectors = ["#mb1-text", "#mb2-text", "#mb3-text", "#mb4-text"]
 
-playerTurn.play = function() {
+playerTurn.play = function() { //player turn function
 
 	var box = $("#chat-text");
 	var attackAnimate = $("#attack");
@@ -157,18 +157,18 @@ playerTurn.play = function() {
 		$("#user-buttons").removeClass("hide");
 		box.text("What will " + player.name + " do?");
 
-		for (var i = playerMoves.length - 1; i >= 0; i--) {
-			playerMoves[i].addMove(moveSelectors[i]);
+		for (var i = playerMoves.length - 1; i >= 0; i--) { //puts player moves
+			playerMoves[i].addMove(moveSelectors[i]);       //back onto the field
 		};
 
-		$("#move-1, #move-2, #move-3, #move-4").unbind().click(function () {
-			var move = $(this).attr("value");
+		$("#move-1, #move-2, #move-3, #move-4").unbind().click(function () { //binds click so moves can 
+			var move = $(this).attr("value");							// activate the attack function
 			currentMove = playerMoves[move];
 			attack();
 		})
 	};
 
-	var attack = function () {
+	var attack = function () { //check to see if move misses
 		var setAccuracy = Math.floor(Math.random() * 100);
 
 		if (setAccuracy <= currentMove.accuracy) {
@@ -183,7 +183,7 @@ playerTurn.play = function() {
 	}
 
 
-	var attackAnimation = function () {
+	var attackAnimation = function () {  //play attack animation if move hits
 		attackAnimate.removeClass("enemyAttack");
 		attackAnimate.addClass("playerAttack");
 		attackAnimate.removeClass("hide");
@@ -196,26 +196,26 @@ playerTurn.play = function() {
 	setUpPlayerField();
 }
 
-var enemyTurn = function() {
+var enemyTurn = function() { //object to turn play over to enemy
 
 };
 
 var enemyMoves = [thunderwave, thunderbolt, thundershock, tailwhip];
 
-enemyTurn.play = function() {
+enemyTurn.play = function() { 
 	var randomMove = Math.floor(Math.random() * 4);
 	var currentMove = enemyMoves[randomMove];
 	var box = $("#chat-text");
 	var attackAnimate = $("#attack");
 
-	var setUpEnemyField = function () {
+	var setUpEnemyField = function () { //set up enemy field, prepare text and hide user buttons
 		box.text(enemy.name + " is about to attack!")
 		$("#user-buttons").addClass("hide");
 		prepareAttack();
 	}
 
-	var prepareAttack = function () {
-		$('#esprite').animate({
+	var prepareAttack = function () {  //prepare enemy to attack, give time 
+		$('#esprite').animate({		//to see animation and text
 			top: "-=10",
 		}, 200, function(){
 			$('#esprite').animate({
@@ -225,7 +225,7 @@ enemyTurn.play = function() {
 		setTimeout(attack, 1500);
 	}
 
-	var attack = function () {
+	var attack = function () { //check if move misses
 		var setAccuracy = Math.floor(Math.random() * 100);
 			if (setAccuracy <= currentMove.accuracy) {
 				box.text(enemy.name + " used " + currentMove.name + "!");
@@ -238,7 +238,7 @@ enemyTurn.play = function() {
 			};
 	}
 
-	var attackAnimation = function () {
+	var attackAnimation = function () { //play attack animation for enemy moves
 		attackAnimate.removeClass("playerAttack");
 		attackAnimate.addClass("enemyAttack");
 		attackAnimate.removeClass("hide");
@@ -251,15 +251,7 @@ enemyTurn.play = function() {
 	setUpEnemyField();
 };
 
-effectTimer = function (pokemon) { //sets the timer for certain effects so they wear off
-	if (typeof pokemon.effect === "string") {
-		if (turnY = turnX + 3 && Math.floor(Math.random()*3) > 2) {
-			pokemon.effect = 1;
-		};
-	};
-};
-
-var loop = function() {
+var loop = function() { //set loop to check health
 	if(enemy.health <= 0) {
 		$('#gameover').removeClass('hide');
 		$('#user-buttons').remove();
@@ -277,7 +269,7 @@ var loop = function() {
 	};
 };
 
-var init = function() {
+var init = function() { //init function to start game and set turns
 	player.playerInfo();
 	enemy.enemyInfo();
 
