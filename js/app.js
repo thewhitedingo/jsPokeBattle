@@ -144,7 +144,7 @@ var playerTurn = function() { //turn object to activate players turn
 
 };
 
-var playerMoves = [ember, scratch, leer, burn];
+var playerMoves = [ember, scratch, leer, fireblast];
 var moveSelectors = ["#mb1-text", "#mb2-text", "#mb3-text", "#mb4-text"]
 
 playerTurn.play = function() { //player turn function
@@ -200,7 +200,7 @@ var enemyTurn = function() { //object to turn play over to enemy
 
 };
 
-var enemyMoves = [thunderwave, thunderbolt, thundershock, tailwhip];
+var enemyMoves = [thunder, thunderbolt, thundershock, tailwhip];
 
 enemyTurn.play = function() { 
 	var randomMove = Math.floor(Math.random() * 4);
